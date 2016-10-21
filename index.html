@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="friendsList">
+  <head>
+    <meta charset="utf-8">
+    <title>Steven's First Angular</title>
+    <link rel="stylesheet" href="./styles.css" media="screen" title="no title">
+  </head>
+  <!-- Putting the angular links here worked, but I'm not sure if this is best practice of if it's better to put it in the opening HTML tag.  -->
+  <body ng-controller="mainCtrl">
+
+    <h1>My Friends</h1>
+    <!-- The "friend" in "friend in friends" is defining the variable which we will use for every iteration of the for loop. So we're basically saying, "Go through the friends array, for for every index, assign the value inside to the variable 'friend', and then post that variable within the <p> tag we put below." -->
+    <div ng-repeat="friend in friends">
+      <p> {{friend}} </p>
+    </div>
+
+    <input type="text" name="friend" placeholder="Add a friend" ng-model="newFriend">
+    <input type="submit" value="Submit" ng-click="addFriend(newFriend)">
+
+
+  </body>
+  <script src="./js/jquery-2.0.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/mainCtrl.js"></script>
+  <script src="./js/animations.js"></script>
+</html>
